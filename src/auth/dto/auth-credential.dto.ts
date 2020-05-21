@@ -15,6 +15,4 @@ export class AuthCredentials {
 export class SignUpDto extends AuthCredentials {
   // TODO: extends multiple information
 }
-export class SignInDto extends AuthCredentials {
-
-}
+export class SignInDto extends AuthCredentials {}

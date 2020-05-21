@@ -22,7 +22,7 @@ export class User extends BaseEntity {
     enum: UserRole,
     default: UserRole.USER,
   })
-  role: string;
+  role: UserRole;
 
   @Column()
   username: string;

@@ -5,7 +5,7 @@ import { User } from './user.entity';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) { }
+  constructor(private readonly authService: AuthService) {}
 
   @Post('/sign-up')
   async signUp(
@@ -16,8 +16,8 @@ export class AuthController {
 
   @Post('/sign-in')
   async signIn(
-    @Body(ValidationPipe) credentials: SignInDto
-  ): Promise<User> {
+    @Body(ValidationPipe) credentials: SignInDto,
+  ): Promise<{ access_token: string }> {
     return this.authService.signIn(credentials);
   }
 }
