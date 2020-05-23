@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { ClassModule } from './class/class.module';
 import { SchoolModule } from './school/school.module';
 import { TrackingModule } from './tracking/tracking.module';
+import { ReportModule } from './report/report.module';
 @Module({
   imports: [
     AuthModule,
@@ -12,6 +13,7 @@ import { TrackingModule } from './tracking/tracking.module';
     ClassModule,
     SchoolModule,
     TrackingModule,
+    ReportModule,
   ],
   controllers: [],
   providers: [],
