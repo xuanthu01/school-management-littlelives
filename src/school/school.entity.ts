@@ -1,4 +1,4 @@
-import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, ManyToOne, Unique } from 'typeorm';
+import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, ManyToOne, Unique, JoinColumn, OneToOne } from 'typeorm';
 import { User } from '../auth/user.entity';
 
 export enum PaymentType {
@@ -15,7 +15,9 @@ export class School extends BaseEntity {
   @Column()
   name: string
 
+
   @ManyToOne(type => School, school => school.id)
+  // @JoinColumn({ name: 'parent_id' })
   parent_id: string
 
   @Column({
@@ -24,7 +26,11 @@ export class School extends BaseEntity {
   })
   payment_type: PaymentType
 
-  @ManyToOne(type => User, user => user.id)
+  @OneToOne(type => User, user => user.id, {
+    onUpdate: "CASCADE",
+    onDelete: "CASCADE"
+  })
+  @JoinColumn({ name: 'owner_id' })
   owner_id: string
 }
 

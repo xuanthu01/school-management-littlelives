@@ -2,7 +2,7 @@ import { IsString, MinLength, MaxLength, Matches } from 'class-validator';
 export class AuthCredentials {
   @IsString()
   @MinLength(4)
-  @MaxLength(20)
+  @MaxLength(48)
   username: string;
 
   @IsString()

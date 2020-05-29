@@ -15,7 +15,7 @@ const createFakeUser = (salt: string) => {
 export async function seed(knex: Knex): Promise<any> {
   await knex("user").del();
   const fakeUser = [];
-  const desiredFakes = 50;
+  const desiredFakes = 100;
   for (let i = 0; i < desiredFakes; i++) {
     const salt = genSaltSync();
     const user = createFakeUser(salt)

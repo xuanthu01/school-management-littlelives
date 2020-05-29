@@ -9,7 +9,7 @@ const createFakeTrack = (class_id: string | number) => {
   const time_check_out = fourHoursAfter.toISOString().replace('Z', '').replace('T', ' ');
   return {
     child_name: faker.name.firstName() + " " + faker.name.lastName(),
-    class_id,
+    classIdId: class_id,
     time_check_in,
     time_check_out
   }
@@ -17,7 +17,7 @@ const createFakeTrack = (class_id: string | number) => {
 
 export async function seed(knex: Knex, classIds: number[]): Promise<any> {
   await knex('tracking').del();
-  const desiredFakes = 50;
+  const desiredFakes = 400;
   const fakesTrack = [];
   for (let i = 0; i < desiredFakes; i++) {
     const class_id = classIds[getRandomEl(classIds.length)];

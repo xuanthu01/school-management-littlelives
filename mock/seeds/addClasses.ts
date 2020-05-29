@@ -5,8 +5,8 @@ import { getRandomEl } from "../utils";
 const createFakeClass = (teacher_id: number, school_id: number) => {
   return {
     name: faker.company.bsBuzz(),
-    teacher_id,
-    school_id,
+    teacherIdId:teacher_id,
+    schoolIdId:school_id,
     year: faker.date.past()
   }
 }

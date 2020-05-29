@@ -13,7 +13,7 @@ export async function up(knex: Knex): Promise<any> {
         .notNullable()
 
       t
-        .integer('class_id')
+        .integer('classIdId')
         .references('class.id')
         .onDelete('cascade')
         .onUpdate('cascade')

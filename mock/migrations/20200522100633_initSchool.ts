@@ -17,7 +17,7 @@ export async function up(knex: Knex): Promise<any> {
           .notNullable();
 
         table
-          .integer('parent_id')
+          .integer('parentIdId')
           .references('school.id')
           .nullable()
           .onUpdate('CASCADE')

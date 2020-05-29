@@ -1,6 +1,5 @@
-// id, child_name, class_id, time_check_in, time_check_out
-
-import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
+import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, JoinColumn, ManyToOne } from 'typeorm'
+import { Class } from '../class/class.entity'
 
 @Entity()
 export class Tracking extends BaseEntity {
@@ -10,12 +9,17 @@ export class Tracking extends BaseEntity {
   @Column()
   child_name: string
 
-  @Column()
-  class_id: string
+  @ManyToOne(type => Class, cl => cl.id)
+  // @JoinColumn({ name: 'classIdId' })
+  class_id: number
 
-  @Column()
-  time_check_in: string
+  @Column({
+    type: "timestamp with time zone"
+  })
+  time_check_in: Date
 
-  @Column()
-  time_check_out: string
+  @Column({
+    type: "timestamp with time zone"
+  })
+  time_check_out: Date
 }

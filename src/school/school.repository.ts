@@ -29,4 +29,27 @@ export class SchoolRepository extends Repository<School>{
       }
     }
   }
+  async findOneClass(school_id: string, class_id: number) {
+    const query = this.createQueryBuilder('school');
+    query
+      .addSelect('class.name')
+      .addSelect('class.year')
+      .addSelect('class.id')
+      .innerJoin('class', 'class', 'class.school_id = school.id')
+      .where('school.id = :school_id', { school_id })
+      .andWhere('class.id = :class_id', { class_id })
+
+    return query.getRawOne();
+  }
+  async findAllClassOfSchool(school_id: string) {
+    const query = this.createQueryBuilder('school');
+    query
+      .addSelect('class.name')
+      .addSelect('class.year')
+      .addSelect('class.id')
+      .innerJoin('class', 'class', 'class.school_id = school.id')
+      .where('school.id = :school_id', { school_id })
+
+    return query.getRawMany();
+  }
 }

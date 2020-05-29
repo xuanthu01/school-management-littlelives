@@ -15,14 +15,14 @@ export async function up(knex: Knex): Promise<any> {
       t.string("year");
 
       t
-        .integer("teacher_id")
+        .integer("teacherIdId")
         .references('user.id')
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
         .notNullable()
 
       t
-        .integer("school_id")
+        .integer("schoolIdId")
         .references('school.id')
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
