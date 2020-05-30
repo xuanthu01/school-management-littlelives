@@ -28,6 +28,9 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Summary
+Read [Summary](/docs/summary.md)
+
 ## Installation
 
 ```bash
@@ -49,7 +52,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-Then, goto http://localhost:3000/api with OpenAPI Swagger
+Then, goto http://localhost:3000/api to explore the API documentation
 
 ## Test
 
