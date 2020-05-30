@@ -53,7 +53,12 @@ $ npm run start:prod
 ```
 
 Then, goto http://localhost:3000/api to explore the API documentation
-
+---
+**Note**
+  - Get user with **payment_type** from /auth/user, choose 1 user and get username.
+  - Goto /auth/sign-in, fill username and password (default: Aa!@#123) and Excute request
+  - Copy JWT to using in another API
+---
 ## Test
 
 ```bash
