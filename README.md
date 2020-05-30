@@ -33,6 +33,8 @@
 ```bash
 $ npm install
 ```
+## Migrate and seed database
+See [Migrate & Seed](/docs/database.md)
 
 ## Running the app
 
@@ -46,6 +48,8 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+Then, goto http://localhost:3000/api with OpenAPI Swagger
 
 ## Test
 
