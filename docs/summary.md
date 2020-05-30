@@ -32,4 +32,4 @@ Xem [hướng dẫn cài đặt & chạy project](/README.md) và  [Migrate & Se
   - [ ] free plan
 - [ ] Paid plan 1 sheet (CSV) for each class (school_owner role)/school (HQ role)
 - [x] Authentication/Authorization(JWT)
-- [x] Seeding data with Faker
+- [x] Migrating with Knex, seeding data with Faker
