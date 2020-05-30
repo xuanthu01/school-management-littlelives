@@ -34,7 +34,7 @@
 $ npm install
 ```
 ## Migrate and seed database
-See [Migrate & Seed](/database.md)
+See [Migrate & Seed](/docs/database.md)
 
 ## Running the app
 
