@@ -38,4 +38,19 @@ export class UserRepository extends Repository<User> {
       return null;
     }
   }
+  async findUserWithPaymentMethod(payment_type: string) {
+    //select * from public.school inner join public.user on school.owner_id = "user".id where "payment_type" = 'free'
+
+    const query = this.createQueryBuilder('user')
+
+    query
+      .addSelect('school.id')
+      .addSelect('school.payment_type')
+      .innerJoin('school', 'school', 'school.owner_id = user.id')
+      .where('payment_type = :payment_type', { payment_type })
+
+    return query.getRawMany();
+
+
+  }
 }

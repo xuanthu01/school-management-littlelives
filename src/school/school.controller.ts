@@ -7,7 +7,8 @@ import { GetUser } from '../auth/get-user.decorator';
 import { User } from '../auth/user.entity';
 import { RolesGuard } from '../common/guards/roles.guard';
 import { Roles } from 'src/common/decorator/roles.decorator';
-
+import { ApiBearerAuth } from '@nestjs/swagger';
+@ApiBearerAuth()
 @Controller('school')
 @UseGuards(AuthGuard('jwt'), RolesGuard)
 export class SchoolController {

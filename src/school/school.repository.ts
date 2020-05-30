@@ -41,14 +41,14 @@ export class SchoolRepository extends Repository<School>{
 
     return query.getRawOne();
   }
-  async findAllClassOfSchool(school_id: string) {
+  async findAllClassOfSchool(school_ids: string[]) {
     const query = this.createQueryBuilder('school');
     query
       .addSelect('class.name')
       .addSelect('class.year')
       .addSelect('class.id')
       .innerJoin('class', 'class', 'class.school_id = school.id')
-      .where('school.id = :school_id', { school_id })
+      .where('school.id IN (:...school_ids)', { school_ids })
 
     return query.getRawMany();
   }

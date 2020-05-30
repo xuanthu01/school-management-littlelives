@@ -23,16 +23,18 @@ const knex = Knex({
 function seedUsers(callback: Function) {
   seedUser(knex)
     .then(() => {
-      return knex.table('user').select('id').where('role', '=', UserRole.SCHOOL_OWNER)
+      return knex.table('user')
+        .select('id', 'role')
+        .where('role', '=', UserRole.SCHOOL_OWNER)
+        .orWhere('role', UserRole.HQ)
     })
-    .then(users => {
-      const schoolOwnerIds = users.map((user) => user.id);
-      callback(null, schoolOwnerIds);
+    .then((users: [{ id: string | number, role: string }]) => {
+      callback(null, users);
     })
     .catch(err => callback(err, []));
 
 }
-function seedSchools(ownerIds: [number], callback: Function) {
+function seedSchools(ownerIds: [{ id: string | number, role: string }], callback: Function) {
   seedSchool(knex, ownerIds)
     .then(() => {
       return knex.table("school").select('id')

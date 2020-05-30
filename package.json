@@ -28,6 +28,7 @@
     "@nestjs/jwt": "^7.0.0",
     "@nestjs/passport": "^7.0.0",
     "@nestjs/platform-express": "^7.0.0",
+    "@nestjs/swagger": "^4.5.9",
     "@nestjs/typeorm": "^7.0.0",
     "@types/passport-jwt": "^3.0.3",
     "async": "^3.2.0",
@@ -44,7 +45,10 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.4",
-    "typeorm": "^0.2.25"
+    "sheetjs": "^2.0.0",
+    "swagger-ui-express": "^4.1.4",
+    "typeorm": "^0.2.25",
+    "xlsx": "^0.16.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.0.0",

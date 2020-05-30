@@ -17,7 +17,7 @@ const createFakeTrack = (class_id: string | number) => {
 
 export async function seed(knex: Knex, classIds: number[]): Promise<any> {
   await knex('tracking').del();
-  const desiredFakes = 400;
+  const desiredFakes = 500;
   const fakesTrack = [];
   for (let i = 0; i < desiredFakes; i++) {
     const class_id = classIds[getRandomEl(classIds.length)];
