@@ -6,11 +6,9 @@ API này được viết bằng NestJS (sử dụng Typescript), với TypeORM (
 Dùng OpenAPI Swagger để quản lý các API, JSON Web Token để chứng thực người dùng.
 Mô hình quan hệ giữa các bảng như hình sau:
 ![Database relationship](./relationship.svg)
-<img src="./relationship.svg">
 
 Riêng bảng School được thiết kế như sau:
 ![School relationship](./school-relationship.svg)
-<img src="./school-relationship.svg">
 
 User được phân quyền với 4 role : HQ, school_owner, school_teacher và user, 3 role đầu tiên thỏa mãn requirement của bài toán, riêng role user (default khi sign-up) không có quyền hạn gì (sẽ được mở rộng nếu cần thiết).
 
