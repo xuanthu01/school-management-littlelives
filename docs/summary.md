@@ -33,3 +33,4 @@ Xem [hướng dẫn cài đặt & chạy project](/README.md) và  [Migrate & Se
 - [ ] Paid plan 1 sheet (CSV) for each class (school_owner role)/school (HQ role)
 - [x] Authentication/Authorization(JWT)
 - [x] Migrating with Knex, seeding data with Faker
+- [ ] Docker compose
