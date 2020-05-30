@@ -1,11 +1,7 @@
 ## Create example data
 
 ### Migrate database
-
-```
-  ./knex migrate:latest --env development
-```
-or using package manager (yarn/npm):
+using package manager (yarn/npm):
 
 ```
   yarn db:migrate
@@ -14,14 +10,16 @@ if you are using npm:
 ```
   npm run db:migrate
 ```
+or using binary
+```
+  ./knex migrate:latest --env development
+```
+
 ### Seed data
 
 #### Run all seed
  After migrate, you can seed database via:
-```
-npx ts-node mock/seeds/seeder.ts
-```
-or using package manager (yarn/npm):
+ using package manager (yarn/npm):
 
 ```
   yarn db:seed
@@ -29,4 +27,8 @@ or using package manager (yarn/npm):
 if you are using npm:
 ```
   npm run db:seed
+```
+or using npx
+```
+npx ts-node mock/seeds/seeder.ts
 ```
