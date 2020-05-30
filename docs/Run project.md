@@ -49,6 +49,8 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+Then, goto http://localhost:3000/api with OpenAPI Swagger
+
 ## Test
 
 ```bash
